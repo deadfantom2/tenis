@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/static/css/main.8c61df17.css",
+    "main.js": "/static/js/main.dbef6695.js",
+    "static/css/164.b1d9e866.chunk.css": "/static/css/164.b1d9e866.chunk.css",
+    "static/js/164.b08029fc.chunk.js": "/static/js/164.b08029fc.chunk.js",
+    "static/js/27.6aa2efc6.chunk.js": "/static/js/27.6aa2efc6.chunk.js",
+    "static/js/799.11d9fe3b.chunk.js": "/static/js/799.11d9fe3b.chunk.js",
+    "static/media/Montserrat-Black.ttf": "/static/media/Montserrat-Black.46e8b3d6aad654578958.ttf",
+    "static/media/Montserrat-Bold.ttf": "/static/media/Montserrat-Bold.079ca05d3ded9bc107ab.ttf",
+    "static/media/Montserrat-ExtraLight.ttf": "/static/media/Montserrat-ExtraLight.62a749ca2820713ebbf8.ttf",
+    "static/media/Mulish-SemiBold.ttf": "/static/media/Mulish-SemiBold.9f38b9b7c2e88d6b74d9.ttf",
+    "static/media/Mulish-Bold.ttf": "/static/media/Mulish-Bold.3fd0f50bd4908ad371c2.ttf",
+    "index.html": "/index.html"
+  },
+  "entrypoints": [
+    "static/css/main.8c61df17.css",
+    "static/js/main.dbef6695.js"
+  ]
+}
