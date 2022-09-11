@@ -1,14 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getTenisesList } from '../Redux/Actions/Tenis.action';
-import TenisCard from '../Components/Tenis.card';
+import ListPlayerContainer from '../Containers/List.players';
 import useWindowSize from '../utils/useWindowSize';
 import { calculateSize } from '../utils/calculateNewSize';
 import LoadAndErrorContainer from '../Containers/LoadAndErrorContainer';
+import FilterModal from '../Modal/Filter.modal';
+import { genders } from '../_helpers/Filter.data';
+import {
+  ITEM_ACTIVE_FILTER_LIST,
+  ITEM_FILTER_LIST,
+} from '../Redux/Constants/Tenis.constant';
 import '../Styles/Home.page.scss';
 
 const HomeScreen = () => {
-  const { loading, tenisesList } = useSelector((state) => state.tenisesList);
+  const [showModal, setShowModal] = useState(false);
+  const { loading, tenisesList, activeFilters, filterItems } = useSelector(
+    (state) => state.tenisesList
+  );
   const [sizeImg, setSizeImg] = useState(640);
   const [displayBall, setDisplayBall] = useState(true);
   const { width } = useWindowSize();
@@ -28,11 +37,15 @@ const HomeScreen = () => {
     <LoadAndErrorContainer loading={false}>
       <div className="home">
         <div className="home_players">
-          <h1>List tenises players</h1>
+          <h1 onClick={() => setShowModal(true)}>
+            List tenises players - click me
+          </h1>
           <div className="home_players_content">
-            {tenisesList.map((item) => (
-              <TenisCard key={item.lastname} item={item} />
-            ))}
+            <ListPlayerContainer
+              activeFilters={activeFilters}
+              filterItems={filterItems}
+              items={tenisesList}
+            />
           </div>
         </div>
 
@@ -47,6 +60,17 @@ const HomeScreen = () => {
           </div>
         )}
       </div>
+
+      <FilterModal
+        showModal={showModal}
+        setShowModal={setShowModal}
+        dataFilters={{ genders }}
+        tenisesList={tenisesList}
+        typeFilters={{
+          ACTIVE_FILTER_LIST: ITEM_ACTIVE_FILTER_LIST,
+          FILTER_LIST: ITEM_FILTER_LIST,
+        }}
+      />
     </LoadAndErrorContainer>
   );
 };

@@ -26,3 +26,19 @@ export const getTenisesList = () => async (dispatch, getState) => {
     });
   }
 };
+
+export const filterActiveItem = (property, typeReducer) => (dispatch) => {
+  dispatch({ type: typeReducer, payload: property });
+};
+
+export const filterItem = (property, items, typeReducer) => (dispatch) => {
+  const filteredItems = items.filter((item) => {
+    return Object.keys(property).every((filterAttribute) => {
+      return property[filterAttribute].some((filterValue) => {
+        return filterValue === String(item[filterAttribute]);
+      });
+    });
+  });
+
+  dispatch({ type: typeReducer, payload: filteredItems });
+};

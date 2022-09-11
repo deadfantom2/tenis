@@ -50,6 +50,7 @@
     & > img {
       margin-top: 5rem;
       transform: rotate(100deg);
+      filter: drop-shadow(40px 50px 4px);
     }
   }
 }
