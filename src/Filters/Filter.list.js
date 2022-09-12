@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { handleChange, checkIfChecked } from '../utils/filter.helpers';
+import { handleChange, checkIfChecked } from '../utils/filters';
 
 const FilterList = ({ keyList, dataFilters, liClass, filters, setFilters }) => {
   return (

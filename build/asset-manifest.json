@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/static/css/main.8c61df17.css",
-    "main.js": "/static/js/main.45ae2f08.js",
-    "static/css/162.12b2fcdf.chunk.css": "/static/css/162.12b2fcdf.chunk.css",
-    "static/js/162.bbe16886.chunk.js": "/static/js/162.bbe16886.chunk.js",
+    "main.js": "/static/js/main.b9d76738.js",
+    "static/css/544.d54851d2.chunk.css": "/static/css/544.d54851d2.chunk.css",
+    "static/js/544.62e97483.chunk.js": "/static/js/544.62e97483.chunk.js",
     "static/js/27.6aa2efc6.chunk.js": "/static/js/27.6aa2efc6.chunk.js",
     "static/js/793.06be93eb.chunk.js": "/static/js/793.06be93eb.chunk.js",
     "static/media/Montserrat-Black.ttf": "/static/media/Montserrat-Black.46e8b3d6aad654578958.ttf",
@@ -15,6 +15,6 @@
   },
   "entrypoints": [
     "static/css/main.8c61df17.css",
-    "static/js/main.45ae2f08.js"
+    "static/js/main.b9d76738.js"
   ]
 }

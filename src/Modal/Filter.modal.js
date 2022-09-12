@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import FilterList from '../Filters/Filter.list';
 import { Button, Modal, Form } from 'react-bootstrap';
-import { handleSubmit } from '../utils/filter.helpers';
+import { handleSubmit } from '../utils/filters';
 
 const FilterModal = ({
   showModal,
