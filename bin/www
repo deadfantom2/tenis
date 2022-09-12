@@ -7,7 +7,6 @@
 var app = require('../app');
 var debug = require('debug')('foo:server');
 var http = require('http');
-// const chalk = require('chalk');
 
 /**
  * Get port from environment and store in Express.

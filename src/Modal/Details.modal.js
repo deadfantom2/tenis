@@ -1,10 +1,10 @@
-import React, { useEffect, memo } from 'react';
+import React, { memo } from 'react';
 import { Modal } from 'react-bootstrap';
 import '../Styles/Details.modal.scss';
 
 const DetailsModal = ({
   showModal,
-  setShowModal,
+  onHideModal,
   item: {
     firstname,
     lastname,
@@ -14,65 +14,46 @@ const DetailsModal = ({
     data: { rank, points, age, weight, height },
   },
 }) => {
-  useEffect(() => {}, []);
-
-  const handleClose = () => {
-    setShowModal(false);
-  };
-
   const weightkg = (weight) => {
     return weight / 1000;
   };
 
   const argsPlayers = [
     {
+      id: 1,
       className: 'one',
       title: 'Rank',
       value: '# ' + rank,
     },
     {
+      id: 2,
       className: 'two',
       title: 'Points',
       value: points,
     },
+    { id: 3, className: 'three', title: 'Country', value: code },
+    { id: 4, className: 'four', title: 'Sex', value: sex },
+    { id: 5, className: 'five', title: 'Age', value: age },
     {
-      className: 'three',
-      title: 'Country',
-      value: code,
-    },
-    {
-      className: 'four',
-      title: 'Sex',
-      value: sex,
-    },
-    {
-      className: 'five',
-      title: 'Age',
-      value: age,
-    },
-    {
+      id: 6,
       className: 'six',
       title: 'Weight',
       value: weightkg(weight) + ' kg',
     },
-    {
-      className: 'seven',
-      title: 'Height',
-      value: height + ' cm',
-    },
+    { id: 7, className: 'seven', title: 'Height', value: height + ' cm' },
   ];
 
   return (
     <Modal
       show={showModal}
-      onHide={handleClose}
+      onHide={onHideModal}
       keyboard={false}
       className="custom__modal"
     >
       <Modal.Header closeButton></Modal.Header>
       <Modal.Body>
         <div className="border-photo">
-          <img src={picture} alt="photo of tenises" />
+          <img src={picture} alt="players" />
         </div>
         <div className="modal-body-upper">
           <div className="tenises__name">
@@ -87,8 +68,8 @@ const DetailsModal = ({
 
         <div className="modal-body-down">
           <div className="body-down-info">
-            {argsPlayers.map(({ className, title, value }) => (
-              <div className={className} key={className}>
+            {argsPlayers.map(({ id, className, title, value }) => (
+              <div className={className} key={id}>
                 <span>{title}</span>
                 <p>{value}</p>
               </div>
@@ -96,7 +77,6 @@ const DetailsModal = ({
           </div>
           <div className="body-down-career">
             <span>Career Title</span>
-            <p></p>
           </div>
         </div>
       </Modal.Body>

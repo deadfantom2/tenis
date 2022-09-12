@@ -15,7 +15,7 @@ import '../Styles/Home.page.scss';
 
 const HomeScreen = () => {
   const [showModal, setShowModal] = useState(false);
-  const { loading, tenisesList, activeFilters, filterItems } = useSelector(
+  const { tenisesList, activeFilters, filterItems } = useSelector(
     (state) => state.tenisesList
   );
   const [sizeImg, setSizeImg] = useState(640);
@@ -25,11 +25,15 @@ const HomeScreen = () => {
 
   useEffect(() => {
     dispatch(getTenisesList());
-    isDispalyTenisBall();
-    calculateSize(width, 640, setSizeImg);
+    isDisplayTenisBall();
+    setSizeImg(() => calculateSize(width, 640));
   }, [width]);
 
-  const isDispalyTenisBall = () => {
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
+
+  const isDisplayTenisBall = () => {
     return width < 768 ? setDisplayBall(false) : setDisplayBall(true);
   };
 
@@ -63,7 +67,7 @@ const HomeScreen = () => {
 
       <FilterModal
         showModal={showModal}
-        setShowModal={setShowModal}
+        onHideModal={handleCloseModal}
         dataFilters={{ genders }}
         tenisesList={tenisesList}
         typeFilters={{

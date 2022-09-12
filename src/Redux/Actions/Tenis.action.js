@@ -17,13 +17,7 @@ export const getTenisesList = () => async (dispatch, getState) => {
       payload: sortPlayers(players, 'data', -1),
     });
   } catch (error) {
-    dispatch({
-      type: TENIS_LIST_FAIL,
-      payload:
-        error.response && error.response.data.message
-          ? error.response.data.message
-          : error.message,
-    });
+    dispatch({ type: TENIS_LIST_FAIL });
   }
 };
 

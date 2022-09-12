@@ -13,11 +13,15 @@ const TenisCard = ({ item }) => {
     data: { rank, points },
   } = item;
 
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
+
   return (
     <>
       <div className="card" onClick={() => setShowModal(true)}>
         <div className="card__photo">
-          <img src={picture} className="card__photo_player" />
+          <img src={picture} className="card__photo_player" alt="card player" />
         </div>
         <div className="card__content">
           <div className="card__content_name">
@@ -44,7 +48,7 @@ const TenisCard = ({ item }) => {
 
       <DetailsModal
         showModal={showModal}
-        setShowModal={setShowModal}
+        onHideModal={handleCloseModal}
         item={item}
       />
     </>

@@ -7,21 +7,16 @@
   "author": "Valentyn",
   "license": "ISC",
   "dependencies": {
-    "@sendgrid/mail": "^7.4.2",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.21.1",
     "bootstrap": "^5.1.3",
-    "chalk": "^5.0.1",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
-    "immer": "^9.0.7",
-    "morgan": "^1.10.0",
     "react": "^17.0.2",
     "react-bootstrap": "^1.4.0",
     "react-dom": "^17.0.2",
-    "react-query": "^3.39.1",
     "react-redux": "^7.2.2",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
@@ -30,9 +25,7 @@
     "redux-devtools-extension": "^2.13.8",
     "redux-thunk": "^2.3.0",
     "sass": "^1.32.12",
-    "web-vitals": "^2.1.2",
-    "y18n": "^4.0.1",
-    "yup": "^0.32.8"
+    "web-vitals": "^2.1.2"
   },
   "scripts": {
     "start": "react-scripts start",

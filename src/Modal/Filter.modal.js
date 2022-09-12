@@ -6,7 +6,7 @@ import { handleSubmit } from '../utils/filter.helpers';
 
 const FilterModal = ({
   showModal,
-  setShowModal,
+  onHideModal,
   tenisesList,
   dataFilters,
   typeFilters: { ACTIVE_FILTER_LIST, FILTER_LIST },
@@ -14,14 +14,10 @@ const FilterModal = ({
   const dispatch = useDispatch();
   const [filters, setFilters] = useState({});
 
-  const handleClose = () => {
-    setShowModal(false);
-  };
-
   return (
     <Modal
       show={showModal}
-      onHide={handleClose}
+      onHide={onHideModal}
       keyboard={false}
       className="custom__modal"
     >
@@ -37,7 +33,7 @@ const FilterModal = ({
               filters,
               tenisesList,
               dispatch,
-              setShowModal
+              onHideModal
             )
           }
         >
